@@ -95,6 +95,7 @@ class _DashBoardState extends State<DashBoard> {
               ],
             ),
             ),
+            SizedBox(height: 5,),
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height/8,
@@ -138,41 +139,91 @@ class _DashBoardState extends State<DashBoard> {
                                  )
                         ],
                       ),
-                    )),Row(
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width/4,
-                          height: MediaQuery.of(context).size.height/8,
-                      // ,color: Colors.green,
-                      child: CircleAvatar(
-                     
-                        backgroundColor: Colors.white,
-                        child: ClipRRect(
-                          child: Padding(
-                            padding:
-                                const EdgeInsets.all(
-                                    2.0),
-                            child: CircleAvatar(
-                                    radius: 40,
-                                    backgroundImage:
-                                        const NetworkImage("https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80"),
-                                    onBackgroundImageError:
-                                        (error,
-                                            stackTrace) {
-                                      Image.asset(
-                                        "assets/images/man.png",
-                                        fit: BoxFit
-                                            .fill,
-                                      );
-                                    },
-                                  ),
+                    )),GestureDetector(
+                      child: Row(
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width/5,
+                            height: MediaQuery.of(context).size.height/10,
+                        // ,color: Colors.green,
+                        child: CircleAvatar(
+                          backgroundColor: Constants.circleavatarcolor,
+                          child: ClipRRect(
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.all(
+                                      2.0),
+                              child: CircleAvatar(
+                                      radius: 40,
+                                      backgroundImage:
+                                          const NetworkImage("https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80"),
+                                      onBackgroundImageError:
+                                          (error,
+                                              stackTrace) {
+                                        Image.asset(
+                                          "assets/images/man.png",
+                                          fit: BoxFit
+                                              .fill,
+                                        );
+                                      },
+                                    ),
+                            ),
                           ),
                         ),
+                          ), const Icon(Icons.arrow_drop_down,color: Colors.black,)
+                        ],
                       ),
-                        )
-                      ],
                     )
                   ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: Container(
+                height: MediaQuery.of(context).size.height/2.6,
+                width: MediaQuery.of(context).size.width/1.1,
+                child: Card(
+                  elevation: 7,
+                  color: Colors.white,
+                  semanticContainer: true,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18)
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: MediaQuery.of(context).size.height/14,
+              width: MediaQuery.of(context).size.width,
+              // color: Colors.red,
+              child: Center(
+                child: Container(
+                  width: MediaQuery.of(context).size.width/2,
+                  height: MediaQuery.of(context).size.height/14,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(18),
+                    color: Constants.buttoncolor
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                                'View on Map',
+                                style: GoogleFonts.barlow(
+                                  fontSize: 19,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                   
+                                ),
+                                
+                                 ),
+                                 Padding(
+                                   padding: const EdgeInsets.symmetric(horizontal: 5),
+                                   child: Icon(Icons.location_on,color: Colors.white,),
+                                 )
+                    ],
+                  ),
                 ),
               ),
             )
