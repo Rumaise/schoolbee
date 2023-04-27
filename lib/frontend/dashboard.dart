@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:route_transitions/route_transitions.dart';
 import 'package:schoolbee/constants/constants.dart';
+import 'package:schoolbee/frontend/alertscreen.dart';
 
 class DashBoard extends StatefulWidget {
   const DashBoard({super.key});
@@ -76,18 +78,23 @@ class _DashBoardState extends State<DashBoard> {
                             ),
                           ),
                         ),
-                          Container(
-                                        height: 61,
-                                    width: 61,
-                                    // color: Colors.red,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFC6C6C6),
-                                borderRadius: BorderRadius.circular(18),
-                              ),
-                              child: const Center(
-                                child: FaIcon(FontAwesomeIcons.bell,color: Colors.white,),
-                              ),
-                                  )
+                          GestureDetector(
+                            onTap: (){
+                              slideRightWidget(newPage: AlertScreen(), context: context);
+                            },
+                            child: Container(
+                                          height: 61,
+                                      width: 61,
+                                      // color: Colors.red,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFC6C6C6),
+                                  borderRadius: BorderRadius.circular(18),
+                                ),
+                                child: const Center(
+                                  child: FaIcon(FontAwesomeIcons.bell,color: Colors.white,),
+                                ),
+                                    ),
+                          )
                       ],
                     ),
                   ),
