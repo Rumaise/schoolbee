@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:route_transitions/route_transitions.dart';
 import 'package:schoolbee/constants/constants.dart';
 import 'package:schoolbee/frontend/indicator.dart';
+import 'package:schoolbee/frontend/scorecardscreen.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -347,26 +349,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ),
                     ),
-                  ),Padding(
-                   padding: const EdgeInsets.only(left: 10),
-                    child: Container(
-                      width: MediaQuery.of(context).size.width/2.4,
-                      height: MediaQuery.of(context).size.height/12,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(18),
-                        color: Constants.buttoncolor
-                      ),
-                      child: Center(
-                        child: Text(
-                                  'Show Marksheet',
-                                  style: GoogleFonts.barlow(
-                                    fontSize: 19,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                     
-                                  ),
-                                  
-                                   ),
+                  ),GestureDetector(
+                    onTap: (){
+                      slideRightWidget(newPage: ScoreCardScreen(), context: context);
+                    },
+                    child: Padding(
+                     padding: const EdgeInsets.only(left: 10),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width/2.4,
+                        height: MediaQuery.of(context).size.height/12,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: Constants.buttoncolor
+                        ),
+                        child: Center(
+                          child: Text(
+                                    'Show Marksheet',
+                                    style: GoogleFonts.barlow(
+                                      fontSize: 19,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w500,
+                                       
+                                    ),
+                                    
+                                     ),
+                        ),
                       ),
                     ),
                   ),
