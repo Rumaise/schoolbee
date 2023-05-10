@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:route_transitions/route_transitions.dart';
 import 'package:schoolbee/constants/constants.dart';
+import 'package:schoolbee/frontend/driverLogin.dart';
+import 'package:schoolbee/frontend/studentLogin.dart';
 
 class LoginOption extends StatefulWidget {
   const LoginOption({super.key});
@@ -62,7 +65,7 @@ class _LoginOptionState extends State<LoginOption> {
                                       children: [
                                           GestureDetector(
                     onTap: (){
-                    
+                    slideRightWidget(newPage: studentLogin(), context: context);
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(right: 10),
@@ -89,7 +92,7 @@ class _LoginOptionState extends State<LoginOption> {
                     ),
                   ) , GestureDetector(
                     onTap: (){
-         
+         slideRightWidget(newPage: DriverLogin(), context: context);
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(right: 10),

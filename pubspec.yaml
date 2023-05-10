@@ -42,6 +42,7 @@ dependencies:
   route_transitions: 
   flutter_dash: ^1.0.0
   syncfusion_flutter_charts: ^21.1.41
+  pinput:
 
 dev_dependencies:
   flutter_test:
